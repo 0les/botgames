@@ -1,2 +1,2 @@
-# botgames
-web site for game development studio BotGames
+# BotGames
+Web site for game development studio BotGames
