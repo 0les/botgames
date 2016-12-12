@@ -1,8 +1,17 @@
 
 body {
   position: relative;
-  padding-top: 80px;
-  font-size: 16px;
+  padding-top: 50px;
+  font-family: 'Roboto Condensed', Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  background: url("../img/banner.png") repeat 0 0;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  color: #ccc;
+}
+h1, h2, h3, h4 {
+  color: #ffb400;
 }
 img {
   max-width: 100%;
@@ -10,216 +19,246 @@ img {
 li {
   list-style-type: none;
 }
+a {
+  color: #ffb400 !important;
+}
+a:hover,
+a:active {
+  color: #b38007 !important;
+}
 .centered {
   margin: 0 auto;
 }
 .vertical-spacing {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
-.bottom-space {
-  margin-bottom: 30px;
+.top-spacing {
+  margin-top: 10px;
+}
+::selection {
+  background: #ff82ff; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #ff82ff; /* Gecko Browsers */
 }
 
 
 .main-navbar {
   min-height: 50px;
-  padding: 15px 0;
-  box-sizing: content-box;
-}
-.main-navbar.affix {
-  padding: 0;
 }
 .main-navbar .container {
   position: relative;
+}
+.main-navbar .nav {
+  float: none;
+  display: table;
+  margin: 0 auto;
+  font-size: 18px;
+  text-transform: uppercase;
 }
 .main-navbar .logo {
   position: absolute;
   left: 0;
   top: 0;
   z-index: 10;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .main-navbar.affix .logo {
   -webkit-transform: translate(-25%, -25%) scale(0.5, 0.5);
   transform: translate(-25%, -25%) scale(0.5, 0.5);
 }
-.main-navbar .nav {
-  float: none;
-  display: none;
-  margin: 0 auto;
-}
-.main-navbar.affix .nav {
-  display: table;
-}
-.main-navbar,
-.main-navbar .logo,
-.main-navbar .nav  {
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  transition: all 0.3s;
-}
 .main-navbar .social-btns {
   position: absolute;
   right: 0;
-  top: 8px;
+  top: 11px;
+  font-size: 14px;
 }
 
+section > .container {
+  background-color: rgba(34, 34, 34, 0.95);
+}
+.section-title {
+  margin-top: 0;
+  padding-right: 10px;
+  border-top: 8px solid;
+  text-align: right;
+  font-family: 'Ubuntu Condensed', Arial, sans-serif;
+  font-size: 54px;
+  line-height: 1.2;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
-.hero-section {
+.games-section {
+  margin-top: 160px;
+}
+.game-logo {
+  opacity: 0.7;
+  background-clip: content-box;
+  background-color: #080808;
+  cursor: pointer;
+  margin-bottom: 30px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.game-logo.active,
+.game-logo:hover {
+  opacity: 1;
+}
+.game-logo .info-text {
+  padding: 0 20px 20px;
+  text-transform: uppercase;
+  text-align: right;
+  -webkit-transition: color 0.5s;
+  -moz-transition: color 0.5s;
+  transition: color 0.5s;
+}
+.game-logo .info-text-show,
+.game-logo.active .info-text-hide {
+  display: block;
+}
+.game-logo.active .info-text-show,
+.game-logo .info-text-hide {
+  display: none;
+}
+.games-section article {
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.games-section article h3 {
+  margin-top: 0;
+}
+.games-section .marked-text {
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+.about-section .video-iframe {
+  width: 100%;
+  height: 600px;
+  border: 0;
+}
+/* UNCOMMENT here and in index.html to see facebook plugin */
+
+/*.about-section .facebook-iframe {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  overflow: auto;
+}*/
+
+.team-member:hover {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  color: #ffb400;
+}
+.team-member img {
+  border-radius: 50%/20%;
+  border: 8px double;
+}
+.team-member h3 {
+  font-size: 32px;
+  font-family: 'Ubuntu Condensed', Arial, sans-serif;
+}
+
+.contacts-section .container {
   position: relative;
-  min-height: 530px;
-  margin-top: -30px;
+  font-size: 20px;
 }
-.img-buildings,
-.img-sky {
+.address {
+  padding: 15px;
+}
+.address span {
+  line-height: 1.8;
+}
+
+/* UNCOMMENT here and in index.html to see paralax images */
+
+/*.img-paralax {
   position: absolute;
 	z-index:-1;
 	top:0;
 	left:0;
 	width:100%;
 	height:100%;
-	background: url("../img/buildings.png") repeat 0 0;
 }
-.img-sky {
-	z-index:-2;
-	background-image:url("../img/sky.png");
+.img-rocket {
+  background: url("../img/rocket.png") no-repeat 0 0;
 }
-.games-section {
-  margin-top: 130px;
-}
-.news-section {
-  background-color: #ededed;
-}
-.news-section .container {
-  min-height: 450px;
-}
-.news-section .facebook-iframe {
-  display: block;
-  margin: 0 auto;
-  border: none;
-  overflow: auto;
-}
-.team-section {
-  background-color: #dcdcdc;
-}
-.team-list {
-  padding: 0;
-}
-.contacts-section {
-  background-color: #ededed;
-  padding-bottom: 20px;
-}
-.contact-block {
-  position: relative;
-  padding: 35px 65px 15px;
-  background-color: #fff;
-  border-radius: 50px;
-  font-size: 20px;
-}
-
-
+.img-alien {
+  background: url("../img/alien.png") no-repeat 0 0;
+}*/
 .btn-go-top {
   display: none;
   position: fixed;
   bottom: 5px;
   right: 5px;
   border-radius: 0;
-  color: #fff;
-  background-color: rgba(0,0,0,0.4);
+  color: #333 !important;
+  background-color: #ffb400;
 }
 .btn-go-top:hover,
 .btn-go-top:focus,
 .btn-go-top:active {
-  color: #fff;
-  background-color: rgba(0,0,0,0.7);
+  color: #333 !important;
+  background-color: #b38007;
 }
-
-
-.nav-with-images {
-  position: absolute;
-  bottom: -110px;
-}
-.nav-with-images li {
-  position: relative;
-}
-.nav-with-images .nav-img-title {
-  margin-bottom: -70px;
-  padding-right: 25px;
-  line-height: 70px;
-  font-size: 22px;
-  text-align: center;
-}
-.nav-with-images a {
-  display: block;
-  width: 244px;
-  height: 270px;
-  background: url('../img/nav-imgs.png') no-repeat;
-}
-.nav-with-images .nav-img-games {
-  background-position: 0 0;
-}
-.nav-with-images .nav-img-games:hover {
-  background-position: -244px 0;
-}
-.nav-with-images .nav-img-news {
-  background-position: 0 -279px;
-}
-.nav-with-images .nav-img-news:hover {
-  background-position: -244px -279px;
-}
-.nav-with-images .nav-img-team {
-  background-position: 0 -560px;
-}
-.nav-with-images .nav-img-team:hover {
-  background-position: -240px -560px;
-}
-.nav-with-images .nav-img-contacts {
-  background-position: 0 -831px;
-}
-.nav-with-images .nav-img-contacts:hover {
-  background-position: -240px -831px;
-}
-
 
 
 @media only screen and (max-width : 992px) {
-  .hero-section {
-    min-height: 200px;
-    background-attachment: initial;
+  body {
+    font-size: 16px;
   }
   .games-section {
     margin-top: 0;
   }
-}
-@media only screen and (max-width : 768px) {
-  .main-navbar {
-    padding: 0;
-  }
-  .main-navbar .nav,
-  .main-navbar.affix .nav {
-    display: block;
-    text-align: center;
-  }
   .main-navbar .logo {
     -webkit-transform: translate(-25%, -25%) scale(0.5, 0.5);
     transform: translate(-25%, -25%) scale(0.5, 0.5);
+  }
+}
+@media only screen and (max-width : 768px) {
+  .vertical-spacing {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .main-navbar {
+    padding: 0;
+  }
+  .main-navbar .nav {
+    display: block;
+    text-align: center;
   }
   .main-navbar .toggle:focus {
     color: #337ab7;
   }
   .main-navbar .social-btns {
     position: fixed;
-    right: 65px;
-    top: 12px;
+    right: 50px;
+    top: 9px;
+  }
+  .game-logo {
+    margin-bottom: 20px;
+  }
+  .game-logo .info-text {
+    padding: 0 10px 10px;
+  }
+  .about-section .video-iframe {
+    height: 300px;
   }
 }
-@media only screen and (min-width : 540px) {
-  .visible-xxs {
-    display: none !important;
-  }
-}
-@media only screen and (max-width : 539px) {
-  .hidden-xxs {
-    display: none !important;
+@media only screen and (min-width : 992px) {
+  .address {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    text-align: right;
   }
 }

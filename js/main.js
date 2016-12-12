@@ -9,12 +9,23 @@
       event.preventDefault();
   });
 
-  $('body').scrollspy({
-      target: '.navbar-fixed-top',
-      offset: 81
+  $('.game-logo').bind('click', function(event) {
+    var wasShown = $(this).hasClass('active');
+    $('.games-section article').addClass('hidden');
+    $('.game-logo').removeClass('active');
+
+    if (!wasShown) {
+      $(this).addClass('active');
+      $('#' + event.currentTarget.id + '-info').removeClass('hidden');
+    }
   });
 
-  $('.main-navbar').affix({offset: {top: 610}});
+  $('body').scrollspy({
+      target: '.navbar-fixed-top',
+      offset: 160
+  });
+
+  $('.main-navbar').affix({offset: {top: 80}});
 
   var fixed = false;
   $(document).scroll(function() {
@@ -35,6 +46,6 @@
     }
   });
 
-  var s = skrollr.init();
+  //var s = skrollr.init();
 
 })(jQuery);
